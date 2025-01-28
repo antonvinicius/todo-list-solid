@@ -45,14 +45,18 @@ export class Task {
 
     get concluded(): boolean { return this._concluded; }
 
-    public markAsDone(): void {
+    private updateTimestamp() {
         this._updatedAt = new Date().toISOString();
+    }
+
+    public markAsDone(): void {
         this._concluded = true;
+        this.updateTimestamp();
     }
 
     public markAsUndone(): void {
-        this._updatedAt = new Date().toISOString();
         this._concluded = false;
+        this.updateTimestamp();
     }
 
 
