@@ -17,7 +17,8 @@
     "typescript": "^5.7.3"
   },
   "dependencies": {
-    "@prisma/client": "^6.2.1"
+    "@prisma/client": "^6.2.1",
+    "fastify": "^5.2.1"
   },
   "prisma": {
     "schema": "src/core/infra/package/prisma/schema.prisma"
