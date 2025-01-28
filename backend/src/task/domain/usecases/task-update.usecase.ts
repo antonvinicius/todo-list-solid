@@ -1,5 +1,9 @@
 import { Task } from "../entities/task";
 
+export type TaskUpdateUseCaseInput = {
+    task: Task
+}
+
 export interface TaskUpdateUseCase {
-    execute(task: Task): Promise<string>
+    execute(input: TaskUpdateUseCaseInput): Promise<string>
 }

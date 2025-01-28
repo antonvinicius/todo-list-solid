@@ -12,7 +12,7 @@ export class TaskCreateController implements FastifyController {
     public handle: (request: FastifyRequest, reply: FastifyReply) => Promise<void> = async (request, reply) => {
         const { name } = request.body as TaskCreateProps
 
-        const result = await this.taskCreateUseCase.execute(name)
+        const result = await this.taskCreateUseCase.execute({ name })
 
         reply.send(result)
     };

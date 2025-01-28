@@ -1,3 +1,7 @@
+export type TaskCreateUseCaseInput = {
+    name: string;
+}
+
 export interface TaskCreateUseCase {
-    execute(name: string): Promise<string>
+    execute(input: TaskCreateUseCaseInput): Promise<string>
 }

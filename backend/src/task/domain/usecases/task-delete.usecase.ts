@@ -1,3 +1,7 @@
+export type TaskDeleteUseCaseInput = {
+    id: string;
+}
+
 export interface TaskDeleteUseCase {
-    execute(id: string): Promise<boolean>
+    execute(input: TaskDeleteUseCaseInput): Promise<boolean>
 }

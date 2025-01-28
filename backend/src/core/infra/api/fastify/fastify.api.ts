@@ -16,12 +16,12 @@ export class FastifyApi implements Api {
     public start(port: number): void {
         this.fastify.listen({ port }, (err, address) => {
             if (err) {
-                this.fastify.log.error(err);
+                console.log(err);
                 process.exit(1);
             }
-            this.fastify.log.info(`Server started at port ${port} 🚀`)
+            console.log(`Server started at port ${port} 🚀`)
             this.routes.forEach(route => {
-                this.fastify.log.info(`${route.method} - /${route.path}`)
+                console.log(`${route.method} - ${route.path}`)
             })
         })
     }
