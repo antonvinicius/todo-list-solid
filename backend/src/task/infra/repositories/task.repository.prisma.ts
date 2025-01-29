@@ -49,13 +49,33 @@ export class TaskRepositoryPrisma implements TaskRepository {
         return updatedTask.id;
     }
 
-    public async delete(taskId: string): Promise<boolean> {
+    public async delete(taskId: string): Promise<string> {
         const deleted = await this.prismaClient.task.delete({
             where: {
                 id: taskId
             }
         })
 
-        return !!deleted
+        return deleted.id;
+    }
+
+    public async findById(taskId: string): Promise<Task | null> {
+        const task = await this.prismaClient.task.findUnique({
+            where: {
+                id: taskId
+            }
+        })
+
+        if (task) {
+            return Task.with({
+                concluded: task.concluded,
+                createdAt: task.createdAt,
+                id: task.id,
+                name: task.name,
+                updatedAt: task.updatedAt
+            })
+        }
+
+        return null;
     }
 }

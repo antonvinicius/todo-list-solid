@@ -3,5 +3,5 @@ export type TaskDeleteUseCaseInput = {
 }
 
 export interface TaskDeleteUseCase {
-    execute(input: TaskDeleteUseCaseInput): Promise<boolean>
+    execute(input: TaskDeleteUseCaseInput): Promise<string>
 }
