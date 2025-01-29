@@ -1,3 +1,5 @@
+import { AppError } from "../../../core/domain/errors/AppError";
+
 export type TaksProps = {
     id: string;
     name: string;
@@ -45,23 +47,37 @@ export class Task {
 
     get concluded(): boolean { return this._concluded; }
 
-    private updateTimestamp() {
-        this._updatedAt = new Date().toISOString();
+    public markAsDone(): Task {
+        return new Task(
+            this._id,
+            this._name,
+            this._createdAt,
+            new Date().toISOString(),
+            true
+        );
     }
 
-    public markAsDone(): void {
-        this._concluded = true;
-        this.updateTimestamp();
+    public markAsUndone(): Task {
+        return new Task(
+            this._id,
+            this._name,
+            this._createdAt,
+            new Date().toISOString(),
+            false
+        );
     }
 
-    public markAsUndone(): void {
-        this._concluded = false;
-        this.updateTimestamp();
-    }
+    public changeName(newName: string): Task {
+        if (!newName || newName.length < 3) {
+            throw new AppError("Nome é inválido");
+        }
 
-
-    public set name(name: string) {
-        if (!name) throw new Error("Invalid name");
-        this._name = name;
+        return new Task(
+            this._id,
+            newName,
+            this._createdAt,
+            new Date().toISOString(),
+            this._concluded
+        )
     }
 }
