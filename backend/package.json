@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon ./src/main.ts"
+    "dev": "tsx watch src/index.ts",
+    "start": "node build/index.js",
+    "build": "tsc",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
@@ -11,17 +14,8 @@
   "description": "",
   "devDependencies": {
     "@types/node": "^22.12.0",
-    "nodemon": "^3.1.9",
-    "prisma": "^6.2.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
-  },
-  "dependencies": {
-    "@prisma/client": "^6.2.1",
-    "fastify": "^5.2.1",
-    "zod": "^3.24.1"
-  },
-  "prisma": {
-    "schema": "src/core/infra/package/prisma/schema.prisma"
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.4"
   }
 }
