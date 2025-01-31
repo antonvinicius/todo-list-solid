@@ -1,9 +1,11 @@
 import { HttpMethods, Route } from "@/api/route";
 import { CreateTaskUseCase } from "@/domain/usecases/create-task.usecase";
 import { Request, Response } from "express";
+import { inject, injectable } from "tsyringe";
 
+@injectable()
 export class CreateTaskRoute implements Route<Request, Response> {
-    constructor(private readonly createTaskUseCase: CreateTaskUseCase) { }
+    constructor(@inject("CreateTaskUseCaseImpl") private readonly createTaskUseCase: CreateTaskUseCase) { }
 
     method = HttpMethods.POST
     path = "/task"

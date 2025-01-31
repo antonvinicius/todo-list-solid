@@ -1,6 +1,8 @@
 import { Task } from "@/domain/entities/task";
 import { TaskRepository } from "@/domain/repositories/task.repository";
+import { injectable } from "tsyringe";
 
+@injectable()
 export class TaskRepositoryInMemory implements TaskRepository {
     private tasks: Task[] = []
 

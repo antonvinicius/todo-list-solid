@@ -3,9 +3,11 @@ import { TaskRepository } from "@/domain/repositories/task.repository";
 import { CreateTaskUseCase, CreateTaskUseCaseInput, CreateTaskUseCaseOutput } from "@/domain/usecases/create-task.usecase";
 import { StatusCode } from "../constants/api.constants";
 import { getErrorOutput } from "./utils/get-error-output";
+import { inject, injectable } from "tsyringe";
 
+@injectable()
 export class CreateTaskUseCaseImpl implements CreateTaskUseCase {
-    constructor(private readonly taskRepository: TaskRepository) { }
+    constructor(@inject("TaskRepositoryInMemory") private readonly taskRepository: TaskRepository) { }
 
     async execute({ name }: CreateTaskUseCaseInput): Promise<CreateTaskUseCaseOutput> {
         try {
