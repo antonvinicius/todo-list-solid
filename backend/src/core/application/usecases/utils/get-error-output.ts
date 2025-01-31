@@ -1,6 +1,6 @@
-import { StatusCode } from "@/application/constants/api.constants"
-import { ValidationError } from "@/domain/errors/validation.error"
-import { UseCaseOutput } from "@/domain/usecases/usecase.output"
+import { StatusCode } from "@/core/application/constants/api.constants"
+import { ValidationError } from "@/core/domain/errors/validation.error"
+import { UseCaseOutput } from "@/core/domain/usecases/usecase.output"
 
 export function getErrorOutput(error: unknown) {
     if (error instanceof ValidationError) {

@@ -1,5 +1,5 @@
-import { Task } from "@/domain/entities/task";
-import { TaskRepository } from "@/domain/repositories/task.repository";
+import { Task } from "@/task/domain/entities/task";
+import { TaskRepository } from "@/task/domain/repositories/task.repository";
 import { injectable } from "tsyringe";
 
 @injectable()

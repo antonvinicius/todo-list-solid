@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
-import { Task } from '@/domain/entities/task'
-import { ValidationError } from '../errors/validation.error'
+import { Task } from '@/task/domain/entities/task'
+import { ValidationError } from '../../../../core/domain/errors/validation.error'
 
 test('should create task correctly', () => {
     const task = Task.create({ name: 'New task' })

@@ -1,4 +1,4 @@
-import { ValidationError } from "../errors/validation.error";
+import { ValidationError } from "../../../core/domain/errors/validation.error";
 
 export type TaskProps = {
     id: string;

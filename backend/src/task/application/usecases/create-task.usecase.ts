@@ -1,8 +1,8 @@
-import { Task } from "@/domain/entities/task";
-import { TaskRepository } from "@/domain/repositories/task.repository";
-import { CreateTaskUseCase, CreateTaskUseCaseInput, CreateTaskUseCaseOutput } from "@/domain/usecases/create-task.usecase";
-import { StatusCode } from "../constants/api.constants";
-import { getErrorOutput } from "./utils/get-error-output";
+import { Task } from "@/task/domain/entities/task";
+import { TaskRepository } from "@/task/domain/repositories/task.repository";
+import { CreateTaskUseCase, CreateTaskUseCaseInput, CreateTaskUseCaseOutput } from "@/task/domain/usecases/create-task.usecase";
+import { StatusCode } from "../../../core/application/constants/api.constants";
+import { getErrorOutput } from "../../../core/application/usecases/utils/get-error-output";
 import { inject, injectable } from "tsyringe";
 
 @injectable()

@@ -1,6 +1,6 @@
-import { Task } from "@/domain/entities/task";
+import { Task } from "@/task/domain/entities/task";
 import { expect, test } from "vitest";
-import { TaskRepositoryInMemory } from "./task.repository.memory";
+import { TaskRepositoryInMemory } from "@/task/application/repositories/task.repository.memory";
 
 test('should save new task', async () => {
     const task = Task.create({ name: 'new task' })

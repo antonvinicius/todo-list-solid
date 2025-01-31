@@ -1,5 +1,5 @@
-import { UseCase } from "./usecase"
-import { UseCaseOutput } from "./usecase.output"
+import { UseCase } from "@/core/domain/usecases/usecase"
+import { UseCaseOutput } from "../../../core/domain/usecases/usecase.output"
 
 export type CreateTaskUseCaseInput = {
     name: string

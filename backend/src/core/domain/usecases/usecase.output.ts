@@ -1,4 +1,4 @@
-import { StatusCode } from "@/application/constants/api.constants";
+import { StatusCode } from "@/core/application/constants/api.constants";
 
 export interface UseCaseOutput {
     data?: any,

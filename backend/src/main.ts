@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import "@/di/container"
-import { ApiExpress } from "./api/express/api.express"
+import { ApiExpress } from "./core/api/express/api.express"
 import { container } from "tsyringe";
 
 function main() {

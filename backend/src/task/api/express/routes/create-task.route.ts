@@ -1,5 +1,5 @@
-import { HttpMethods, Route } from "@/api/route";
-import { CreateTaskUseCase } from "@/domain/usecases/create-task.usecase";
+import { HttpMethods, Route } from "@/core/api/route";
+import { CreateTaskUseCase } from "@/task/domain/usecases/create-task.usecase";
 import { Request, Response } from "express";
 import { inject, injectable } from "tsyringe";
 
